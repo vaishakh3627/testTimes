@@ -1,13 +1,12 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import {React, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import axios from 'axios'
+import { Col, Container, Row } from 'react-bootstrap'
 
 function Home() {
 const [data,setData] = useState([])
 const [loading,setLoading] = useState(false)
 const storedArray = useSelector((state) => state.array);
-
 
 const fetchData = () => {
     setLoading(true)

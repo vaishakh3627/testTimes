@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import {React, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
+
 import {AiOutlineGoogle,AiOutlineLinkedin} from 'react-icons/ai'
 import {FaFacebookF, FaTwitter} from 'react-icons/fa'
-import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 
 import { storeArray } from '../redux/action'
  
@@ -33,19 +34,18 @@ const handleSubmit = () => {
   return (
     <Container fluid style={{ height:'100vh'}}>
         <Row className='h-100'>
-            <Col lg={8} sm={12} className='d-flex align-items-center justify-content-center flex-column p-0'>
-                
+            <Col lg={8} sm={12} className='d-flex align-items-start justify-content-center flex-column p-0 ps-5'>
                     <h2>
                 Sign In
                 </h2>
                 <p>New user ? <span className='text-primary fs--1'>Create an account</span></p>
                 <Form.Control placeholder='Uername or email' type='text' className='w-50 mb-2' value={formData.username} name='username' onChange={handleFieldChange} />
                 <Form.Control placeholder='Password' type='password' className='w-50' value={formData.password} name='password' onChange={handleFieldChange} />
-                <div className='d-flex gap-2 align-items-start justify-content-start'>
+                <div className='d-flex gap-2 align-items-start justify-content-start mt-2'>
                 <Form.Check />
                 <p>Keep me signed in</p>
                 </div>
-                <Button variant='dark' className='w-50' style={{borderRadius: "0px"}} onClick={handleSubmit}>Sign In</Button>
+                <Button variant='dark' className='w-50' style={{borderRadius: "0px"}} onClick={handleSubmit} disabled={!formData.username && !formData.password}>Sign In</Button>
                 <div className='mt-2 mb-2'>
                     <p>Or Sign In With</p>
                 </div>
