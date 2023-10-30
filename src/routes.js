@@ -7,8 +7,8 @@ import LoginForm from './components/LoginForm'
 function routes() {
   return (
     <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={<LoginForm />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/' element={<LoginForm />} />
     </Routes>
   )
 }

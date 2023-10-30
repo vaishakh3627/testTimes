@@ -38,7 +38,7 @@ useEffect(() => {
            <h5>Europe</h5>
             </div>
         </div>
-        <Row className='p-5 g-2 d-flex aling-items-center justify-content-between'>
+        <Row className='p-5 g-2 d-flex aling-items-center justify-content-around'>
             {storedArray?.username && <h5>Welcome {storedArray?.username}</h5>}
             {data && data.length > 0 && !loading ? data.map((item,index) => (
                 <Col style={{height: "7rem",border: "1px solid black"}} lg={5} md={5} key={index} className='p-2 d-flex'>

@@ -27,8 +27,7 @@ const handleFieldChange = (e) => {
 
 const handleSubmit = () => {
     dispatch(storeArray(formData));
-
-    navigate('/')
+    navigate('/home')
 }
 
   return (
